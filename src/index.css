@@ -1,0 +1,261 @@
+/* Color scheme heavily inspired by the default React app, but Google Fonts because React's default font is kindof boring!! */
+
+/* Tags */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Poppins", Calibri, Arial, sans-serif;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26.4px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+ul {
+    background-color: #222;
+    border: 1px solid #222;
+    overflow: auto;
+    padding: 0px;
+    margin: 0;
+    height: 75vh;
+}
+
+p {
+    font-family: "Encode Sans Semi Expanded", Calibri, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 15px 0;
+}
+
+a {
+  font-family: "Encode Sans Semi Expanded", Calibri, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+}
+
+/* Structure */
+
+.App {
+    text-align: center;
+    /* css grid for the win */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 150px 1fr 5vh;
+    grid-template-areas:
+      "header header"
+      "list map"
+      "footer footer"
+}
+
+/* Header */
+
+.App-header {
+    grid-area: header;
+    background-color: #222;
+    padding: 20px;
+    color: white;
+    border: none;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Footer */
+
+.App-footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    padding-top: 20px;
+    margin-top: -5px;
+}
+
+/* Map */
+
+#map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.map-container {
+    grid-area: map;
+    position: relative;
+    height: 80vh;
+    max-height: 80vh;
+    margin: -2px 0;
+}
+
+.script-error, .loading-map {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.s-pin {
+    animation: s-pin infinite 5s linear;
+    height: 80px;
+}
+
+@keyframes s-pin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Venue list */
+
+.sidebar {
+    grid-area: list;
+    z-index: 1;
+    height: 80vh;
+    max-height: 80vh;
+    background-color: #222;
+    border: 1px solid #222;
+    margin: -3px 0;
+}
+
+.sidebar:not(:focus-within) {
+   background-color: rgb(34, 34, 33);
+   transition: background-color 0.01s;
+}
+
+/* Search bar */
+
+.search {
+    width: 300px;
+    padding: 5px;
+    background-color: #222;
+    border: 3px solid #61DAFB;
+    color: white;
+    border-radius: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+.search:focus::placeholder {
+    opacity: 0;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 5px;
+    font-size: 16px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/* Venue items */
+
+.venue-item {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #222;
+    border: 1px solid #222;
+    color: white;
+    border-radius: 30px;
+}
+
+.venue-item:hover {
+    background-color: #61DAFB;
+    color: #222;
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #61DAFB;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+/* InfoWindow */
+
+.read-more {
+  margin-bottom: -3px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+
+  h1, h2 {
+      font-size: 22px;
+  }
+
+  h2 {
+      margin-top: 20px;
+      line-height: 0;
+  }
+
+  .App {
+      grid-template-rows: 150px 1fr 1fr 43px;
+      grid-template-areas:
+        "header header"
+        "map map"
+        "list list"
+        "footer footer"
+  }
+
+  .App-footer {
+      border-top: 5px solid #61DAFB;
+      padding-top: 0;
+      margin-top: 0;
+  }
+
+  .search {
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 323px) {
+
+  h1, h2 {
+      font-size: 20px;
+  }
+
+}
