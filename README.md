@@ -4,7 +4,7 @@ This a resubmission for the final project for the "Building With React" section 
 
 ## IMPORTANT API KEYS NOTE
 
-I've tried to used React's environment variables to hide my own API keys for both Google Maps' API and Foursquare's API while still keeping the app operational, and while it SHOULD still work after cloning, it may or may not.
+I've tried to use React's environment variables to hide my own API keys for both Google Maps' API and Foursquare's API while still keeping the app operational, and while it SHOULD still work after cloning, it may or may not.
 
 If it doesn't, in the App.js file, on line 212 replace ``` ${process.env.REACT_APP_GOOGLE_API_KEY} ``` with your own Google Maps API key, and on lines 144 and 145 replace both ``` ${process.env.REACT_APP_FOURSQUARE_API_ID} ``` as well as ``` ${process.env.REACT_APP_FOURSQUARE_API_SECRET} ``` with your own Foursquare API ID and Secret respectively.
 
